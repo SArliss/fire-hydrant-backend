@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
   # POST /articles
   def create
     @article = Article.create!(article_params)
-    json_response(@article, :created)
+    json_response(@article)
   end
 
   # GET /articles/:id
