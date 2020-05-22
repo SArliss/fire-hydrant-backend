@@ -1,6 +1,17 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :update, :destroy]
- 
+  skip_before_action :authorize_request, only: [:welcome, :public_articles]
+
+# Welcome root page
+def welcome
+  json_response('Hello puppies! Welcome to the fire hydrant!')
+end
+
+def public_articles
+  @articles = Article.all
+  json_response(@articles)
+end
+
   # GET /articles
   def index
     @articles = Article.all
