@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
-  before_action :set_todo, only: [:show, :update, :destroy]
-
+  before_action :set_article, only: [:show, :update, :destroy]
+ 
   # GET /articles
   def index
     @articles = Article.all
@@ -26,9 +26,8 @@ class ArticlesController < ApplicationController
 
   # DELETE /articles/:id
   def destroy
-    @todo.destroy
-    json_response(status: 'SUCCESS', message: 'deleted the article', data: @article.title)
-
+    @article.destroy
+    json_response(status: 'SUCCESS', message: 'deleted the article')
   end
 
   private
@@ -38,7 +37,7 @@ class ArticlesController < ApplicationController
     params.permit(:title, :created_by)
   end
 
-  def set_todo
+  def set_article
     @article = Article.find(params[:id])
   end
 end
