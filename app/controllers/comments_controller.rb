@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
 
   # GET /articles/:article_id/comments/:id
   def show
-    json_response(@article)
+    json_response(@comment)
   end
 
   # POST /articles/:article_id/comments
@@ -43,6 +43,6 @@ class CommentsController < ApplicationController
   end
 
   def set_article_comment
-    @comment = @article.comment.find_by!(id: params[:id]) if @article
+    @comment = @article.comments.find_by!(id: params[:id]) if @article
   end
 end
