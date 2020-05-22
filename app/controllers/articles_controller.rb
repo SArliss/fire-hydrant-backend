@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
 
   # POST /articles
   def create
-    @article = Article.create!(article_params)
+    @article = current_user.articles.create!(article_params)
     json_response(@article)
   end
 
@@ -34,7 +34,7 @@ class ArticlesController < ApplicationController
 
   def article_params
     # whitelist params
-    params.permit(:title, :created_by)
+    params.permit(:title)
   end
 
   def set_article

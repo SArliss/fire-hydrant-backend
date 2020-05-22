@@ -21,6 +21,3 @@ class AuthenticateUser
     raise(ExceptionHandler::AuthenticationError, Message.invalid_credentials)
   end
 end
-
-
-<p data-line="362" class="sync-line" style="margin:0;"></p>
