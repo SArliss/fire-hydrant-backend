@@ -1,13 +1,13 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :update, :destroy]
-  skip_before_action :authorize_request, only: [:welcome, :public_articles]
+  skip_before_action :authorize_request, only: [:welcome, :feed]
 
 # Welcome root page
 def welcome
-  json_response('Hello puppies! Welcome to the fire hydrant!')
+  json_response('Hello puppies! Welcome to the fire hydrant!!!')
 end
 
-def public_articles
+def feed
   @articles = Article.all
   json_response(@articles)
 end

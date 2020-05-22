@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   end
   post 'auth/login', to: 'authentication#authenticate'
   post 'register', to: 'users#create'
-  get 'all/articles', to: 'articles#public_articles'
+  get 'feed', to: 'articles#feed'
   root 'articles#welcome'
 end
