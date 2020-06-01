@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   post 'auth/login', to: 'authentication#authenticate'
   post 'register', to: 'users#create'
   get 'feed', to: 'articles#feed'
+  get 'users', to: 'users#show'
   root 'articles#welcome'
 end
