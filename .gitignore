@@ -14,19 +14,19 @@ tmp/cache/
 .pnp.js
 
 # testing
-/coverage
+# /coverage
 
 # production
-/build
+# /build
 
 # misc
 .DS_Store
 .DS_Store?
 **.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# .env.local
+# .env.development.local
+# .env.test.local
+# .env.production.local
 
 # Ignore yarn files
 npm-debug.log*
